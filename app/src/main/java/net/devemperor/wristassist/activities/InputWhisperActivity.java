@@ -211,7 +211,7 @@ public class InputWhisperActivity extends AppCompatActivity {
 
         String apiKey = sp.getString("net.devemperor.wristassist.api_key", "noApiKey");
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://api.openai.com/")
+                .baseUrl("http://192.168.0.107:3000/")
                 .client(defaultClient(apiKey.replaceAll("[^ -~]", ""), Duration.ofSeconds(120)).newBuilder().build())
                 .addConverterFactory(JacksonConverterFactory.create(defaultObjectMapper()))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
