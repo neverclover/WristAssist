@@ -24,3 +24,8 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew assembleDebug -x lint
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+          name: WearOS-Package  # 下载时的文件名
+          path: app/build/outputs/apk/debug/*.apk # 这里的路径必须准确
